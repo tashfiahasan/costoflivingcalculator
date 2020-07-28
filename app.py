@@ -4,21 +4,10 @@ from flask import Flask
 from flask import render_template
 from flask import request
 
-
 # -- Initialization section --
 app = Flask(__name__)
-new_york  = {
-    "city_name": "New York",
-    "med_household_income" : 57782,
-    "Car_costs" : 3.076,
-    "Transit_costs" : 2.75,
-}
-san_francisco = {
-"city_name" : "San Fransciso",
-"med_household_income" : 96265, 
-"Car_costs" : 3.10,
-"Transit_costs" : 2.75,
-}
+city_names = ["new_york","san_francisco","atlanta","boston","baltimore","chicago","denver","detroit","honolulu","houston","la",",miami","washington-dc","seattle","austin","philadelphia"]
+
 los_angeles = {
 "city_name" : "Los Angeles",
 "med_household_income": 69150,
@@ -109,64 +98,81 @@ Honolulu = {
 @app.route('/')
 @app.route('/index')
 def index():
-    return "hello world"
+    return render_template('index.html')
 @app.route("/")
 @app. route("/san-francisco")
 def san_fran(): 
-    return "San Francisco"
+    san_francisco = {
+"city_name" : "San Fransciso",
+"med_household_income" : 96265, 
+"Car_costs" : 3.10,
+"Transit_costs" : 2.75,
+}
+    return render_template('san-francisco.html')
 @app.route("/")
 @app. route("/new-york")
 def new_york(): 
-    return "New York"
+    new_york  = {
+    "city_name": "New York",
+    "med_household_income" : 57782,
+    "Car_costs" : 3.076,
+    "Transit_costs" : 2.75,
+    }
+    print(new_york["Transit_costs"])
+    return render_template('new-york.html')
 @app.route("/")
 @app. route("/la")
 def la():
-    return "Los Angeles"
+    return render_template('la.html')
 @app.route("/")
 @app. route("/boston")
 def boston():
-    return "Boston"
+    return render_template('boston.html')
 @app.route("/")
 @app. route("/chicago")
 def chicago():
-    return "Chicago"
+    return render_template('chicago.html')
 @app.route("/")
 @app. route("/washington-dc")
 def washington_dc():
-    return "washington-dc"
+    return render_template('washington-dc.html')
 @app.route("/")
 @app. route("/seattle")
 def seattle():
-    return "Seattle"
+    return render_template('seattle.html')
 @app.route("/")
 @app. route("/austin")
 def austin():
-    return "Austin"
+    return render_template('austin.html')
 @app.route("/")
 @app. route("/miami")
 def miami():
-    return "Miami"
+    return render_template('miami.html')
 @app.route("/")
 @app. route("/denver")
 def denver():
-    return "Denver"
+    return render_template('denver.html')
 @app.route("/")
 @app. route("/philadelphia")
 def philadelphia():
-    return "Philadelphia"
+    return render_template('philadelphia.html')
 @app.route("/")
 @app. route("/detroit")
 def detroit():
-    return "Detroit"
+    return render_template('detroit.html')
 @app.route("/")
 @app. route("/atlanta")
 def atlanta():
-    return "Atlanta"
+     return render_template('atlanta.html')
 @app.route("/")
 @app. route("/baltimore")
 def baltimore():
-    return "Baltimore"
+     return render_template('baltimore.html')
 @app.route("/")
 @app. route("/honolulu")
 def honolulu():
-    return "Honolulu"
+     return render_template('honolulu.html')
+@app.route("/")
+@app. route("/houston")
+def houston():
+     return render_template('houston.html')
