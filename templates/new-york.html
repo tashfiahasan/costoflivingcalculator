@@ -127,5 +127,13 @@
     <br />
     <h1>New York</h1>
     <br />
+    <tbody>
+  {% for city, city in city_names.items() %}
+    <tr>
+      <td>{{ new_york }}</td>
+      <td>{{ city_names }}</td>
+    </tr>
+  {% endfor %}
+</tbody>
   </body>
 </html>
