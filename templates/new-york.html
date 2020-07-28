@@ -126,14 +126,9 @@
     <br />
     <br />
     <h1>New York</h1>
-    <br />
-    <tbody>
-  {% for city, city in city_names.items() %}
-    <tr>
-      <td>{{ new_york }}</td>
-      <td>{{ city_names }}</td>
-    </tr>
-  {% endfor %}
-</tbody>
+    <p> The median household income is {{city["med_household_income"]}}. </p>
+    <p> The average cost of a gallon of gas is {{city["Car_costs"]}}. </p>
+    <p> The average cost of the fare for a subway or local bus ride is {{city["Transit_costs"]}}. </p>
+    <br/>
   </body>
 </html>
