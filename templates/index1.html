@@ -215,15 +215,19 @@
             <option>{{city}}</option>
             {% endfor %}
           </select>
+          <input type="submit">
+        </div>
+        
 <div class="form-group col-6">
-          <label for="bookGenre">Genre</label>
+          <label for="cities">City I Want To Live In</label>
           <select class="form-control" name="bookGenre">
-            {% for genre in ['Action','Drama','Historical Fiction','Fantasy','Mystery','Romance','Science Fiction','Suspense','Thriller','Young Adult'] %}
-            <option>{{genre}}</option>
+            {% for city in ['Atlanta','Austin','Baltimore','Boston','Chicago','Denver','Detroit','Honolulu','Houston','Los Angeles','Miami','New York','Philadelphia','San Francisco','Seattle','Washington DC'] %}
+            <option>{{city}}</option>
             {% endfor %}
           </select>
+            <input type="submit">
         </div>
-    <div class="input-group">
+        <div class="input-group">
           <input
             type="income"
             class="form-control"
@@ -233,7 +237,7 @@
           />
           <div class="input-group-btn">
             <button type="button" class="btn btn-danger">Submit</button>
-          </div> -->
+          </div>
         </div>
       </form>
     </div>
@@ -249,7 +253,7 @@
             on four metrics: median household income, the average cost of a
             gallon of gas and the average cost of transportation.
           </p>
-          <br /><button class="btn btn-default btn-lg">Begin Exploring</button>
+          <br><a href="index"><button class="btn btn-default btn-lg">Begin Exploring</button> </a> 
         </div>
       </div>
     </div>
