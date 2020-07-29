@@ -110,6 +110,9 @@ cities = {
 def index_one():
     return render_template('index1.html')
 @app.route('/')
+def my_form():
+    return render_template('index.html')
+@app.route('/')
 @app.route('/index')
 def index():
     return render_template('index.html')
@@ -161,4 +164,3 @@ def honolulu():
 @app. route("/houston")
 def houston():
      return render_template('houston.html', city=cities["houston"])
-
