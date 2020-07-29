@@ -54,10 +54,10 @@
     <title>Living Costs</title>
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" type="text/css" href="city.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/city.css" />
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-        <h1>Chicago</h1>
+    <h1>Chicago</h1>
     <div
       id="carouselExampleCaptions"
       class="carousel slide"
@@ -77,9 +77,12 @@
           <img
           src="https://media.timeout.com/images/101696887/630/472/image.jpg"
           class="d-block w-100"
+          alt="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/220px-Empire_State_Building_%28aerial_view%29.jpg"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
             <div class="transbox">
+
+
 <h5>Art Institute of Chicago</h5>
             <p>
               The diverse collection spans thousands of years and includes
@@ -98,6 +101,7 @@
           <img
           src="https://www.planetware.com/photos-large/USIL/illinois-chicago-millenium-park.jpg"
           class="d-block w-100"
+          alt="https://cdn.mos.cms.futurecdn.net/XsbvTN6PRi6PZtgEGvRsiE.jpg"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
             <div class="transbox">
@@ -114,10 +118,10 @@
           <img
           src="https://www.planetware.com/photos-large/USIL/illinois-chicago-navy-pier.jpg"
           class="d-block w-100"
+          alt="https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1047&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F05%2F27%2Ftimes-square-billboards-going-dark-FT-BLOG0520.jpg"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
             <div class="transbox">
-          <div class="carousel-caption d-none d-md-block">
             <h5>Navy Pier</h5>
             <p>
               The Navy Pier is made up of 50 acres of gardens, attractions,
@@ -149,21 +153,20 @@
     </div>
     <br />
     <br />
-
     <br />
 
     <!-- Container (About Section) -->
     <div class="container-fluid bg-grey">
       <div class="row">
         <div class="col-sm-4">
-          <span class="glyphicon glyphicon-globe logo slideanim"></span>
+          <img src="https://climefish.eu/wp-content/uploads/sites/18/2017/08/icon-globe-400px.png" style="width:300px;height:300px;">
         </div>
         <div class="col-sm-8">
-          <h2>About New York</h2>
+          <h2>About Chicago</h2>
           <br />
           <br />
           <p>
-            <p> The median household income is {{city["med_household_income"]}}. </p>
+             <p> The median household income is {{city["med_household_income"]}}. </p>
     <p> The average cost of a gallon of gas is {{city["Car_costs"]}}. </p>
     <p> The average cost of the fare for a subway or local bus ride is {{city["Transit_costs"]}}. </p>
           </p>
@@ -184,6 +187,7 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
           </h4>
+
           <p><b> Current Resident on Overall Experience</b></p>
           <p>
             Chicago is a great city to raise a family, there is a wonderful neighborhood environment combined with the hustle and culture of city life. Lots to do, lots to see, and lots of opportunities.
@@ -194,7 +198,7 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
           </h4>
           <p><b> Current Resident on Overall Experience</b></p>
@@ -205,7 +209,7 @@
         <div class="col-sm-4">
           <h4>
             <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
+            <span class="fa fa-star checked"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
@@ -315,5 +319,6 @@
         });
       });
     </script>
+
   </body>
 </html>
