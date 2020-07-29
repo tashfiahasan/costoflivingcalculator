@@ -4,11 +4,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -37,6 +43,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
     </style>
+
     <style>
       /* Make the image fully responsive */
       .carousel-inner img {
@@ -49,7 +56,8 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" type="text/css" href="city.css" />
   </head>
-  <body>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <h1>Baltimore</h1>
     <div
       id="carouselExampleCaptions"
       class="carousel slide"
@@ -68,47 +76,47 @@
         <div class="carousel-item active">
           <img
           src="https://www.planetware.com/photos-large/USMD/maryland-baltimore-fort-mchenry-national-national-monument.jpg"
-          class="d-block w-100"
-          alt="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/220px-Empire_State_Building_%28aerial_view%29.jpg"
-          height: 500px />
+          class="d-block w-100" height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Fort McHenry National Monument and Historic Shrine</h5>
-            <p>
-              Fort McHenry, built between 1798 and 1803 to command the harbor
-              entrance, is revered as the place that inspired the National
-              Anthem, The Star Spangled Banner.
-            </p>
+            <div class="transbox">
+              <h5>Fort McHenry National Monument and Historic Shrine</h5>
+              <p>
+                Fort McHenry, built between 1798 and 1803 to command the harbor
+                entrance, is revered as the place that inspired the National
+                Anthem, The Star Spangled Banner.
+              </p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
           <img
           src="https://i1.wp.com/www.hisour.com/wp-content/uploads/2017/03/Walters-Art-Museum.jpg?fit=962%2C640&ssl=1"
-          class="d-block w-100"
-          alt="https://cdn.mos.cms.futurecdn.net/XsbvTN6PRi6PZtgEGvRsiE.jpg"
-          height: 500px />
+          class="d-block w-100" height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Walters Art Gallery</h5>
-            <p>
-              This is one of only a few museums worldwide to present a
-              comprehensive history of art from the third millennium BC to the
-              early 20th century..
-            </p>
+            <div class="transbox">
+              <h5>Walters Art Gallery</h5>
+              <p>
+                This is one of only a few museums worldwide to present a
+                comprehensive history of art from the third millennium BC to the
+                early 20th century..
+              </p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
           <img
           src="https://www.planetware.com/photos-large/USMD/maryland-baltimore-aquarium.jpg"
-          class="d-block w-100"
-          alt="https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1047&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F05%2F27%2Ftimes-square-billboards-going-dark-FT-BLOG0520.jpg"
-          height: 500px />
+          class="d-block w-100" height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>National Aquarium</h5>
-            <p>
-              Exhibits in this huge complex explore Atlantic and Pacific coral
-              reefs, the open ocean environments, a kelp forest, Amazon river
-              forests, hidden sea life, life on the seashore, Australian aquatic
-              life, and more.
-            </p>
+            <div class="transbox">
+              <h5>National Aquarium</h5>
+              <p>
+                Exhibits in this huge complex explore Atlantic and Pacific coral
+                reefs, the open ocean environments, a kelp forest, Amazon river
+                forests, hidden sea life, life on the seashore, Australian
+                aquatic life, and more.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -133,11 +141,179 @@
     </div>
     <br />
     <br />
-    <h1>Baltimore</h1>
+
     <br />
-    <p> The median household income is {{city["med_household_income"]}}. </p>
+    <!-- Container (About Section) -->
+    <div class="container-fluid bg-grey">
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-globe logo slideanim"></span>
+        </div>
+        <div class="col-sm-8">
+          <h2>About Atlanta</h2>
+          <br />
+          <br />
+          <p>
+             <p> The median household income is {{city["med_household_income"]}}. </p>
     <p> The average cost of a gallon of gas is {{city["Car_costs"]}}. </p>
     <p> The average cost of the fare for a subway or local bus ride is {{city["Transit_costs"]}}. </p>
-    <br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container (Reviews Section) -->
+    <div id="reviews" class="container-fluid text-center">
+      <h2>Reviews</h2>
+      <br />
+      <div class="row slideanim">
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </h4>
+          <p><b> Current Resident on Overall Experience</b></p>
+          <p>
+            I love Baltimore I love the different diversities of people, and I
+            have so many tourist attractions. It's a beautiful place to live the
+            people here are very friendly, hardworking and will make you feel at
+            home no matter where you are.
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </h4>
+          <p><b> Former Resident on Past Experience</b></p>
+          <p>
+            Baltimore is a very diverse city. Yes, it is gritty, however there a
+            pockets of thriving interesting small business that make this place
+            worth while. I've learned that old bay pretty much can go on
+            anything, and eating crabs is a serious matter.
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </h4>
+          <p><b> Former Resident on Past Experience</b></p>
+          <p>
+            I don't like anything about Baltimore City. I would like to see
+            change in our schools, murder rate, and most likely the environment.
+            There is a lot of carelessness and not enough love.
+          </p>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div id="contact" class="container-fluid bg-grey">
+      <h2 class="text-center">CONTACT</h2>
+      <div class="row">
+        <div class="col-sm-5">
+          <p>Contact us and we'll get back to you within 24 hours.</p>
+          <p>
+            <span class="glyphicon glyphicon-map-marker"></span> New York, US
+          </p>
+          <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+          <p>
+            <span class="glyphicon glyphicon-envelope"></span>
+            myemail@something.com
+          </p>
+        </div>
+        <div class="col-sm-7 slideanim">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Name"
+                type="text"
+                required
+              />
+            </div>
+            <div class="col-sm-6 form-group">
+              <input
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email"
+                type="email"
+                required
+              />
+            </div>
+          </div>
+          <textarea
+            class="form-control"
+            id="comments"
+            name="comments"
+            placeholder="Comment"
+            rows="5"
+          ></textarea
+          ><br />
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <button class="btn btn-default pull-right" type="submit">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on("click", function(event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top
+              },
+              900,
+              function() {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+
+        $(window).scroll(function() {
+          $(".slideanim").each(function() {
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+          });
+        });
+      });
+    </script>
+
   </body>
 </html>

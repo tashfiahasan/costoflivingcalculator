@@ -4,11 +4,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -37,6 +43,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
     </style>
+
     <style>
       /* Make the image fully responsive */
       .carousel-inner img {
@@ -49,7 +56,8 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" type="text/css" href="city.css" />
   </head>
-  <body>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <h1>Miami</h1>
     <div
       id="carouselExampleCaptions"
       class="carousel slide"
@@ -71,10 +79,13 @@
           class="d-block w-100"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Bayfront Park</h5>
-            <p>
-              Fun Fact: A series of motorsports events have taken place on a temporary street circuit at Bayfront Park dating back to 1983.
-            </p>
+            <div class="transbox">
+              <h5>Bayfront Park</h5>
+              <p>
+                Fun Fact: A series of motorsports events have taken place on a
+                temporary street circuit at Bayfront Park dating back to 1983.
+              </p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
@@ -83,8 +94,14 @@
           class="d-block w-100"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Bayside Marketplace</h5>
-            <p>Fun Fact: On two floors Bayside Marketplace houses a remarkable variety of stores, and thanks to the clever half-open design guests can shop here at any weather.</p>
+            <div class="transbox">
+              <h5>Bayside Marketplace</h5>
+              <p>
+                Fun Fact: On two floors Bayside Marketplace houses a remarkable
+                variety of stores, and thanks to the clever half-open design
+                guests can shop here at any weather.
+              </p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
@@ -93,10 +110,14 @@
           class="d-block w-100"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Stiltsville</h5>
-            <p>
-              Fun Fact: Stiltsville is a group of wood stilt houses located one mile south of Cape Florida, on sand banks of the Safety Valve on the edge of Biscayne Bay in Miami-Dade County, Florida. 
-            </p>
+            <div class="transbox">
+              <h5>Stiltsville</h5>
+              <p>
+                Fun Fact: Stiltsville is a group of wood stilt houses located
+                one mile south of Cape Florida, on sand banks of the Safety
+                Valve on the edge of Biscayne Bay in Miami-Dade County, Florida.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -121,10 +142,173 @@
     </div>
     <br />
     <br />
-    <h1>Miami</h1>
-    <p> The median household income is {{city["med_household_income"]}}. </p>
+
+    <br />
+
+    <!-- Container (About Section) -->
+    <div class="container-fluid bg-grey">
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-globe logo slideanim"></span>
+        </div>
+        <div class="col-sm-8">
+          <h2>About New York</h2>
+          <br />
+          <br />
+          <p>
+            <p> The median household income is {{city["med_household_income"]}}. </p>
     <p> The average cost of a gallon of gas is {{city["Car_costs"]}}. </p>
     <p> The average cost of the fare for a subway or local bus ride is {{city["Transit_costs"]}}. </p>
-    <br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container (Reviews Section) -->
+    <div id="reviews" class="container-fluid text-center">
+      <h2>Reviews</h2>
+      <br />
+      <div class="row slideanim">
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </h4>
+          <p><b> Current Resident on Overall Experience</b></p>
+          <p>
+            Amazing. There’s a lot of good people in the neighborhood. Great school for the kids. At night is very safe and fun, for kids and adults. Have a lot of parks around for families. Very clean and nice.
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </h4>
+          <p><b> Current Resident on Overall Experience</b></p>
+          <p>
+            I enjoy the beautiful attractions and the variety of people. I would like to see a change in the overall health of Miami, for example, the trash in the ocean, air pollution due to the industrial footprint, and the inconsistent, underdeveloped areas in my beautiful city.
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </h4>
+          <p><b> Former Resident on Past Experience</b></p>
+          <p>
+            The cost of living i would like to see that decrease because the way things are now in our everyday lives our outcome is more than our income and the cost of living here is ridiculously high.
+
+          </p>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div id="contact" class="container-fluid bg-grey">
+      <h2 class="text-center">CONTACT</h2>
+      <div class="row">
+        <div class="col-sm-5">
+          <p>Contact us and we'll get back to you within 24 hours.</p>
+          <p>
+            <span class="glyphicon glyphicon-map-marker"></span> New York, US
+          </p>
+          <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+          <p>
+            <span class="glyphicon glyphicon-envelope"></span>
+            myemail@something.com
+          </p>
+        </div>
+        <div class="col-sm-7 slideanim">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Name"
+                type="text"
+                required
+              />
+            </div>
+            <div class="col-sm-6 form-group">
+              <input
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email"
+                type="email"
+                required
+              />
+            </div>
+          </div>
+          <textarea
+            class="form-control"
+            id="comments"
+            name="comments"
+            placeholder="Comment"
+            rows="5"
+          ></textarea
+          ><br />
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <button class="btn btn-default pull-right" type="submit">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on("click", function(event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top
+              },
+              900,
+              function() {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+
+        $(window).scroll(function() {
+          $(".slideanim").each(function() {
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+          });
+        });
+      });
+    </script>
+
   </body>
 </html>

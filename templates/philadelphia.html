@@ -1,13 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -36,6 +43,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
     </style>
+
     <style>
       /* Make the image fully responsive */
       .carousel-inner img {
@@ -48,7 +56,8 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" type="text/css" href="city.css" />
   </head>
-  <body>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <h1>Philadelphia</h1>
     <div
       id="carouselExampleCaptions"
       class="carousel slide"
@@ -71,12 +80,14 @@
           alt="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/220px-Empire_State_Building_%28aerial_view%29.jpg"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>The Liberty Bell Center</h5>
-            <p>
-              Fun fact: Many historians believe the 44-pound clapper caused the
-              bell to famously crack on its first use. Visitors can tour The
-              Liberty Bell Center for free year-round.
-            </p>
+            <div class="transbox">
+              <h5>The Liberty Bell Center</h5>
+              <p>
+                Fun fact: Many historians believe the 44-pound clapper caused
+                the bell to famously crack on its first use. Visitors can tour
+                The Liberty Bell Center for free year-round.
+              </p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
@@ -86,13 +97,15 @@
           alt="https://cdn.mos.cms.futurecdn.net/XsbvTN6PRi6PZtgEGvRsiE.jpg"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Reading Terminal Market</h5>
-            <p>
-              Reading Terminal Market, the city’s famous indoor food paradise
-              that’s a one-stop shop for local produce, delicious sandwiches,
-              fresh-baked pastries and artisanal cheeses available from dozens
-              of vendors.
-            </p>
+            <div class="transbox">
+              <h5>Reading Terminal Market</h5>
+              <p>
+                Reading Terminal Market, the city’s famous indoor food paradise
+                that’s a one-stop shop for local produce, delicious sandwiches,
+                fresh-baked pastries and artisanal cheeses available from dozens
+                of vendors.
+              </p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
@@ -102,13 +115,15 @@
           alt="https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1047&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F05%2F27%2Ftimes-square-billboards-going-dark-FT-BLOG0520.jpg"
           height: 500px />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Longwood Gardens</h5>
-            <p>
-              Longwood Gardens attracts visitors — more than 1.4 million in 2018
-              — from around the globe to its 1,100 acres in Kennett Square that
-              are filled with stunning gardens, woodlands, meadows and
-              fountains.
-            </p>
+            <div class="transbox">
+              <h5>Longwood Gardens</h5>
+              <p>
+                Longwood Gardens attracts visitors — more than 1.4 million in
+                2018 — from around the globe to its 1,100 acres in Kennett
+                Square that are filled with stunning gardens, woodlands, meadows
+                and fountains.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -133,10 +148,179 @@
     </div>
     <br />
     <br />
-    <h1>Philadelphia</h1>
-    <p> The median household income is {{city["med_household_income"]}}. </p>
+
+    <br />
+
+    <!-- Container (About Section) -->
+    <div class="container-fluid bg-grey">
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-globe logo slideanim"></span>
+        </div>
+        <div class="col-sm-8">
+          <h2>About New York</h2>
+          <br />
+          <br />
+          <p>
+             <p> The median household income is {{city["med_household_income"]}}. </p>
     <p> The average cost of a gallon of gas is {{city["Car_costs"]}}. </p>
     <p> The average cost of the fare for a subway or local bus ride is {{city["Transit_costs"]}}. </p>
-    <br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container (Reviews Section) -->
+    <div id="reviews" class="container-fluid text-center">
+      <h2>Reviews</h2>
+      <br />
+      <div class="row slideanim">
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </h4>
+          <p><b>Visitor on Overall Experience</b></p>
+          <p>
+            Its historical landmarks and strong support, especially for
+            Philadelphia sports. I love the diversity in the city and all it has
+            to offer in terms of schools, jobs, art, history, night life,
+            dining, etc.
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </h4>
+          <p><b> Current Resident on Overall Experience</b></p>
+          <p>
+            The city is very diverse and liberal. It has wonderful history and
+            historical sites throughout the city. Public schools are underfunded
+            and have caused schools to close.
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h4>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </h4>
+          <p><b> Former Resident on Past Experience</b></p>
+          <p>
+            Philadelphia has so many broken parts, that it will never be fixed.
+            The corruption in government, the failing school system, the liberal
+            District Attorney's office, etc has contributed to its demise.
+          </p>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div id="contact" class="container-fluid bg-grey">
+      <h2 class="text-center">CONTACT</h2>
+      <div class="row">
+        <div class="col-sm-5">
+          <p>Contact us and we'll get back to you within 24 hours.</p>
+          <p>
+            <span class="glyphicon glyphicon-map-marker"></span> New York, US
+          </p>
+          <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+          <p>
+            <span class="glyphicon glyphicon-envelope"></span>
+            myemail@something.com
+          </p>
+        </div>
+        <div class="col-sm-7 slideanim">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Name"
+                type="text"
+                required
+              />
+            </div>
+            <div class="col-sm-6 form-group">
+              <input
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email"
+                type="email"
+                required
+              />
+            </div>
+          </div>
+          <textarea
+            class="form-control"
+            id="comments"
+            name="comments"
+            placeholder="Comment"
+            rows="5"
+          ></textarea
+          ><br />
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <button class="btn btn-default pull-right" type="submit">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on("click", function(event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top
+              },
+              900,
+              function() {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+
+        $(window).scroll(function() {
+          $(".slideanim").each(function() {
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+          });
+        });
+      });
+    </script>
+
   </body>
 </html>
