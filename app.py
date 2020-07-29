@@ -109,67 +109,51 @@ cities = {
 @app.route('/index')
 def index():
     return render_template('index.html')
-@app.route("/")
 @app. route("/san-francisco")
 def san_fran(): 
     return render_template('san-francisco.html', city=cities["san_francisco"])
-@app.route("/")
 @app. route("/new-york")
 def new_york(): 
     return render_template('new-york.html', city=cities["new_york"])
-@app.route("/")
 @app. route("/la")
 def la():
     return render_template('la.html', city=cities["la"] )
-@app.route("/")
 @app. route("/boston")
 def boston():
     return render_template('boston.html', city=cities["boston"])
-@app.route("/")
 @app. route("/chicago")
 def chicago():
     return render_template('chicago.html', city=cities["chicago"])
-@app.route("/")
 @app. route("/washington-dc")
 def washington_dc():
     return render_template('washington-dc.html', city=cities["washington-dc"])
-@app.route("/")
 @app. route("/seattle")
 def seattle():
     return render_template('seattle.html', city=cities["seattle"])
-@app.route("/")
 @app. route("/austin")
 def austin():
     return render_template('austin.html', city=cities["austin"])
-@app.route("/")
 @app. route("/miami")
 def miami():
     return render_template('miami.html', city=cities["miami"])
-@app.route("/")
 @app. route("/denver")
 def denver():
     return render_template('denver.html', city=cities["denver"])
-@app.route("/")
 @app. route("/philadelphia")
 def philadelphia():
     return render_template('philadelphia.html', city=cities["philadelphia"])
-@app.route("/")
 @app. route("/detroit")
 def detroit():
     return render_template('detroit.html', city=cities["detroit"])
-@app.route("/")
 @app. route("/atlanta")
 def atlanta():
      return render_template('atlanta.html', city=cities["atlanta"])
-@app.route("/")
 @app. route("/baltimore")
 def baltimore():
      return render_template('baltimore.html', city=cities["baltimore"])
-@app.route("/")
 @app. route("/honolulu")
 def honolulu():
      return render_template('honolulu.html', city=cities["honolulu"])
-@app.route("/")
 @app. route("/houston")
 def houston():
      return render_template('houston.html', city=cities["houston"])
