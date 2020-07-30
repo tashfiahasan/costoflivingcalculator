@@ -209,7 +209,7 @@
       <p>Choose to plan your future.</p>
 <div class="form-group col-6">
           <label for="cities">City I Currently Live In</label>
-          <select class="form-control" name="cities">
+          <select class="form-control" name="cities_stay">
             {% for city in ['Atlanta','Austin','Baltimore','Boston','Chicago','Denver','Detroit','Honolulu','Houston','Los Angeles','Miami','New York','Philadelphia','San Francisco','Seattle','Washington DC'] %}
             <option>{{city}}</option>
             {% endfor %}
@@ -219,7 +219,7 @@
         
 <div class="form-group col-6">
           <label for="cities">City I Want To Live In</label>
-          <select class="form-control" name="bookGenre">
+          <select class="form-control" name="cities_go">
             {% for city in ['Atlanta','Austin','Baltimore','Boston','Chicago','Denver','Detroit','Honolulu','Houston','Los Angeles','Miami','New York','Philadelphia','San Francisco','Seattle','Washington DC'] %}
             <option>{{city}}</option>
             {% endfor %}
@@ -227,21 +227,6 @@
             <input type="submit">
             
         </div>
-        <div class="input-group">
-          <input
-            type="income"
-            class="form-control"
-            size="50"
-            placeholder="Current annual income"
-            required
-          />
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-danger">Submit</button>
-          </div>
-        <br><a href= {{city}} ><button class="btn btn-default btn-lg">Go!</button> </a> 
-
-        </div>
-      </form>
     </div>
     <div id="about" class="container-fluid">
       <div class="row">
