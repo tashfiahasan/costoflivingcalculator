@@ -2,7 +2,7 @@
 # -- Import section --
 from flask import Flask
 from flask import render_template
-from flask import request
+from flask import request, redirect, url_for
 # -- Initialization section --
 app = Flask(__name__)
 city_names = [
@@ -125,16 +125,45 @@ cities = {
 @app.route('/index1')
 def index_one():
     return render_template('index1.html')
-@app.route('/')
-def my_form():
-    return render_template('index.html')
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template('index.html')
-@app. route("/san-francisco")
+@app.route('/results',methods=['GET','POST'])
+def results():
+    if request.method == 'GET':
+        return redirect("http://0.0.0.0:5000" + url_for('index_one'))
+    else:
+        form = request.form
+        city = form['cities_go']
+        lookup_dict = {
+            "San Francisco":"san_fran",
+            "Atlanta":"atlanta",
+            "Austin":"austin",
+            "Baltimore":"baltimore",
+            "Boston":"boston",
+            "Chicago":"chicago",
+            "Denver":"denver",
+            "Detroit":"detroit",
+            "Honolulu":"honolulu",
+            "Houston": "houston",
+            "Miami": "miami",
+            "New York": "new_york",
+            "Philadelphia": "philadelphia",
+            "Seattle":"seattle",
+            "Washington DC": "washington-dc",  
+        }
+        # city = lookup_dict.get(city,"index_one") #delete this line when results.html is ready
+        # return redirect("http://0.0.0.0:5000" + url_for(city)) #delete this line when results.html is ready
+        city_one = form["cities_stay"]
+        city_two = form["cities_go"]
+        city_one = lookup_dict[city_one]
+        city_two = lookup_dict[city_two]
+        data = {
+            "city_one": cities[city_one],
+            "city_two": cities[city_two]
+        }
+        print(data)
+        return render_template('results.html',data=data)
+@app. route("/san-francisco") #def line up with whats inside cities
 def san_fran(): 
-    return render_template('san-francisco.html', city=cities["san_francisco"])
+    return render_template('san-francisco.html', city=cities["san_fran"])
 @app. route("/new-york")
 def new_york(): 
     return render_template('new-york.html', city=cities["new_york"])
