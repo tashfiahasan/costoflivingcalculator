@@ -131,7 +131,7 @@ def results():
         return redirect("http://0.0.0.0:5000" + url_for('index_one'))
     else:
         form = request.form
-        city = form['cities_go']
+        # city = form['cities_go']
         lookup_dict = {
             "San Francisco":"san_fran",
             "Atlanta":"atlanta",
