@@ -5,7 +5,23 @@ from flask import render_template
 from flask import request, redirect, url_for
 # -- Initialization section --
 app = Flask(__name__)
-city_names = ["new_york","san_francisco","atlanta","boston","baltimore","chicago","denver","detroit","honolulu","houston","la",",miami","washington-dc","seattle","austin","philadelphia"]
+city_names = [
+    "new_york",
+    "san_francisco",
+    "atlanta","boston",
+    "baltimore",
+    "chicago",
+    "denver",
+    "detroit",
+    "honolulu",
+    "houston",
+    "la",
+    "miami",
+    "washington-dc",
+    "seattle",
+    "austin",
+    "philadelphia"
+]
 cities = {
     "la":{
         "city_name" : "Los Angeles",
